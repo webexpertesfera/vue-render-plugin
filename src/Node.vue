@@ -14,21 +14,21 @@
   )
 
   // Inputs
-  // .input(v-for='input in inputs()')
-  //   Socket(v-socket:input="input", type="input", :socket="input.socket")
-  //   .input-title(v-show='!input.showControl()') {{input.name}}
-  //   .input-control(
-  //     v-show='input.showControl()'
-  //     v-control="input.control"
-  //   )
-
-  // Inputs to customize on 5 sep 2018
   .input(v-for='input in inputs()')
     Socket(v-socket:input="input", type="input", :socket="input.socket")
+    .input-title(v-show='!input.showControl()') {{input.name}}
     .input-control(
+      v-show='input.showControl()'
       v-control="input.control"
     )
-    Socket(v-socket:output="input.output", type="output", :socket="input.output.socket")
+
+  // Inputs to customize on 5 sep 2018
+  // .input(v-for='input in inputs()')
+  //   Socket(v-socket:input="input", type="input", :socket="input.socket")
+  //   .input-control(
+  //     v-control="input.control"
+  //   )
+  //   Socket(v-socket:output="input.output", type="output", :socket="input.output.socket")
 </template>
 
 <script>
@@ -96,11 +96,8 @@ export default {
     padding: 8px
   .output
     text-align: right
-    display: none
   .input
     text-align: left
-    .output
-      display: inline-block
   .input-title,.output-title
     vertical-align: middle
     color: white
