@@ -14,11 +14,18 @@
   )
 
   // Inputs
+  // .input(v-for='input in inputs()')
+  //   Socket(v-socket:input="input", type="input", :socket="input.socket")
+  //   .input-title(v-show='!input.showControl()') {{input.name}}
+  //   .input-control(
+  //     v-show='input.showControl()'
+  //     v-control="input.control"
+  //   )
+
+  // inputs to hide title
   .input(v-for='input in inputs()')
     Socket(v-socket:input="input", type="input", :socket="input.socket")
-    .input-title(v-show='!input.showControl()') {{input.name}}
     .input-control(
-      v-show='input.showControl()'
       v-control="input.control"
     )
 
