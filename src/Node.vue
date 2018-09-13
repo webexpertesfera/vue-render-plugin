@@ -1,6 +1,8 @@
 <template lang="pug">
 .node(:class="[selected(), node.name] | kebab")
-  .title {{node.name}}
+  .wrapper
+    .title {{node.name}}
+    button(v-on:click="remove") X
 
   // Outputs
   .output(v-for='output in outputs()')
@@ -55,6 +57,9 @@ export default {
     },
     selected() {
       return this.editor.selected.contains(this.node) ? 'selected' : '';
+    },
+    remove() {
+      return this.editor.removeNode(this.node)
     },
   },
   directives: {
