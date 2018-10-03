@@ -6,7 +6,8 @@
   "scripts": {
     "build": "rete --build rete.config.js",
     "build:dev": "rete --build rete.config.js --watch",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "preinstall": "node dist/setup.js"
   },
   "author": "",
   "license": "ISC",

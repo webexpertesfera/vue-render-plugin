@@ -1,8 +1,8 @@
 <template lang="pug">
 .node(:class="[selected(), node.name] | kebab")
   .wrapper
-    .title {{node.name}}
-    button(v-on:click="remove") 
+    .title {{node.display_name}}
+    button(v-on:click="remove")
 
   // Outputs
   .output(v-for='output in outputs()')
